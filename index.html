@@ -565,6 +565,77 @@
       font-weight: 800;
     }
 
+    .consultation-card {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .consultation-intro {
+      border-radius: 28px;
+      padding: 28px;
+      color: white;
+      background:
+        radial-gradient(circle at top right, rgba(255,221,85,0.62), transparent 16rem),
+        linear-gradient(150deg, var(--teal-dark), var(--teal));
+      box-shadow: 0 18px 44px rgba(15,111,120,0.18);
+    }
+
+    .consultation-intro h3 {
+      font-size: 2rem;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .consultation-intro p {
+      color: rgba(255,255,255,0.82);
+      font-weight: 600;
+    }
+
+    .consultation-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .consultation-point {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.94);
+    }
+
+    .consultation-point::before {
+      content: "✓";
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--gold);
+      color: var(--teal-dark);
+      font-size: 0.8rem;
+      flex: 0 0 auto;
+    }
+
+    .form-wrap {
+      border-radius: 28px;
+      overflow: hidden;
+      background: white;
+      border: 1px solid rgba(15,111,120,0.1);
+      box-shadow: 0 18px 44px rgba(15,111,120,0.12);
+    }
+
+    .form-wrap iframe {
+      display: block;
+      width: 100%;
+      min-height: 782px;
+      border: 0;
+      background: white;
+    }
+
     footer {
       text-align: center;
       padding: 34px 10px 0;
@@ -575,7 +646,7 @@
     footer strong { color: var(--teal-dark); }
 
     @media (max-width: 960px) {
-      .hero-content, .about-grid, .course-shell, .capstone { grid-template-columns: 1fr; }
+      .hero-content, .about-grid, .course-shell, .capstone, .consultation-card { grid-template-columns: 1fr; }
       .submissions-grid { grid-template-columns: repeat(2, 1fr); }
       .hero { min-height: auto; }
       .hero-card { min-height: auto; }
@@ -591,6 +662,8 @@
       .section-head { display: block; }
       .section-note { margin-top: 12px; }
       section { padding: 22px; }
+      .consultation-intro { padding: 22px; }
+      .form-wrap iframe { min-height: 840px; }
     }
   </style>
 </head>
@@ -605,6 +678,7 @@
           <a href="#course">Course</a>
           <a href="#submissions">Submissions</a>
           <a href="#capstone">Capstone</a>
+          <a href="#consultation">Consultation</a>
         </div>
       </nav>
 
@@ -618,6 +692,7 @@
           <div class="hero-actions">
             <a class="button primary" href="#submissions">View Weekly Work →</a>
             <a class="button secondary" href="#course">Explore Course Modules</a>
+            <a class="button secondary" href="#consultation">Contact for Consultation</a>
           </div>
         </div>
 
@@ -833,6 +908,34 @@
           <li>✓ Reusable prompts and documentation</li>
           <li>✓ Clear visual outputs for decision-makers</li>
         </ul>
+      </div>
+    </section>
+
+    <section id="consultation">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Contact for Consultation</div>
+          <h2 class="section-title">Let’s discuss how I can support your work.</h2>
+        </div>
+        <p class="section-note">Please complete the consultation form below to share your request, preferred support area, and contact details.</p>
+      </div>
+
+      <div class="consultation-card">
+        <div class="consultation-intro">
+          <h3>Consultation request form</h3>
+          <p>
+            Use this form to request consultation related to public health data, immunization analytics, surveillance data quality, GIS mapping, dashboards, reporting, or responsible AI-supported workflows.
+          </p>
+          <div class="consultation-points">
+            <div class="consultation-point">Share your consultation topic</div>
+            <div class="consultation-point">Describe the support you need</div>
+            <div class="consultation-point">Provide contact details for follow-up</div>
+          </div>
+        </div>
+
+        <div class="form-wrap">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdHXxa_o548NVrY3Ely3-Oa6-XHQm9sjYUpLZGWGP4AAfIEtw/viewform?embedded=true" width="640" height="782" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
       </div>
     </section>
 
